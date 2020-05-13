@@ -31,6 +31,9 @@ Table services in your app:
 	* a new 'link to table' column in the Users table named 'roles' that links
 	to multiple rows of the 'roles' table
 
+### Cookiecutter Template
+If you are starting a new application, you can also use this [cookiecutter template](https://github.com/meatballs/anvil-cookiecutter) which has an option to include this module using the direct inclusion method above.
+
 ## Usage
 
 You can clone a demonstration of this module in use from:
