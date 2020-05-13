@@ -60,7 +60,7 @@ def sensitive_server_function():
   do_stuff()
 ```
 #### authorisation_required
-Checks that a user is logged in to our app and has sufficient permissions before the
+Checks that a user is logged in to your app and has sufficient permissions before the
 function is called and raises an error if not:
 
 ```python
