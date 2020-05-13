@@ -39,9 +39,9 @@ You can clone a demonstration of this module in use from:
 
 ### Users and Permissions
 
-    * Add entries to the permissions table. (e.g. 'can_view_stuff', 'can_edit_sensitive_thing')
-    * Add entries to the roles table (e.g. 'admin') with links to the relevant permissions
-    * In the Users table, link users to the relevant roles
+* Add entries to the permissions table. (e.g. 'can_view_stuff', 'can_edit_sensitive_thing')
+* Add entries to the roles table (e.g. 'admin') with links to the relevant permissions
+* In the Users table, link users to the relevant roles
 
 ### Server Functions
 The module includes two decorators which you can use on your server functions:
