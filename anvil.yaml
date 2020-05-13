@@ -1,5 +1,64 @@
 allow_embedding: false
-package_name: Custom_HTML_1
-name: Custom HTML 1
+package_name: Authorisation
+db_schema:
+- name: permissions
+  id: 54752
+  python_name: permissions
+  columns:
+    A7grleLB5Uo=:
+      name: description
+      type: string
+      admin_ui: {order: 1, width: 200}
+    Dt47wr5eFGQ=:
+      name: name
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: permissions, app_id: CSPYXZNIBW5CVI6Y, server: full, client: none,
+    table_id: 54752}
+- name: roles
+  id: 54751
+  python_name: roles
+  columns:
+    9UY7uW_YWCQ=:
+      name: permissions
+      type: liveObjectArray
+      backend: anvil.tables.Row
+      admin_ui: {order: 1, width: 200}
+      table_id: 54752
+    Bj5Lme7V_KU=:
+      name: name
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: roles, app_id: CSPYXZNIBW5CVI6Y, server: full, client: none,
+    table_id: 54751}
+- name: Users
+  id: 54750
+  python_name: users
+  columns:
+    7mOgfX3V9lE=:
+      name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 100}
+    tx5LkefAm+s=:
+      name: roles
+      type: liveObjectArray
+      backend: anvil.tables.Row
+      admin_ui: {order: 2, width: 200}
+      table_id: 54751
+    uOUZD5juSgI=:
+      name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: users, app_id: CSPYXZNIBW5CVI6Y, server: full, client: none,
+    table_id: 54750}
+name: Authorisation
+renamed: true
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: true}
+  server_config: {user_table: users}
